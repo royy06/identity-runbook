@@ -1,1 +1,26 @@
+# Project 01 – Identity Foundation & Access Model
+
+## Objective
+Establish a secure identity foundation using Microsoft Entra ID by implementing user accounts, security groups, and MFA.
+
+## Tasks Completed
+- Created test users in Entra ID
+- Created security groups
+- Assigned users to groups
+- Enabled Security Defaults (MFA)
+- Documented procedures in a runbook
+
+## Access Model
+Access is assigned using security groups rather than direct user permissions to follow least-privilege principles.
+
+## Artifacts
+- Identity-Foundation-Runbook.pdf
+- Screenshots located in the screenshots folder
+
+## Skills Demonstrated
+- Identity and Access Management (IAM)
+- User provisioning
+- Group-based access control
+- MFA implementation
+- IT documentation
 
