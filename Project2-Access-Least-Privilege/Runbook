@@ -1,89 +1,81 @@
 # Project 2: Access Requests & Least Privilege Review
 
 ## Objective
-Demonstrate the principle of least privilege by controlling access using security groups and validating that users only have the permissions they need.
+Demonstrate the principle of least privilege by managing access through security groups and validating that users only have the permissions required for their role.
 
 ---
 
-## 1. Review Existing Users and Groups
+## Prerequisites
+- Microsoft Entra ID tenant
+- At least two test users
+- Admin access to Entra ID
 
-1. Sign in to **Microsoft Entra Admin Center**.
+---
+
+## Step 1: Review Existing Users
+
+1. Sign in to the Microsoft Entra Admin Center.
 2. Navigate to **Entra ID → Users → Active users**.
-3. Identify:
-   - Test users created previously
-   - Existing security groups
-4. Navigate to **Entra ID → Groups** and review current group memberships.
+3. Verify that at least two test users exist.
+4. Confirm that users do not have unnecessary roles or permissions assigned.
 
 ---
 
-## 2. Create Role-Based Security Groups
+## Step 2: Create Security Groups
 
-1. Go to **Entra ID → Groups**.
-2. Click **New group**.
+1. Navigate to **Entra ID → Groups**.
+2. Select **New group**.
 3. Configure the group:
-   - Group type: **Security**
-   - Group name: `App-Access-Users`
-   - Description: Users with approved access to the application
-4. Save the group.
-5. Repeat to create a second group:
-   - Group name: `App-Access-Admins`
-   - Purpose: Administrative-level access (restricted)
+   - Group type: Security
+   - Group name: App-Access-Users
+   - Membership type: Assigned
+4. Create the group.
+5. Repeat the process to create:
+   - Group name: App-Access-Admins
 
 ---
 
-## 3. Assign Users Based on Least Privilege
+## Step 3: Assign Users Using Least Privilege
 
 1. Open the **App-Access-Users** group.
-2. Add **only one test user** as a member.
-3. Leave the second test user unassigned.
-4. Do NOT add users to the Admin group unless required.
-
-Purpose:
-- Users only receive access needed for their role.
-- No default or excessive permissions are granted.
+2. Add **one test user only**.
+3. Do not assign users to the Admin group unless required.
+4. Leave the second test user without group access.
 
 ---
 
-## 4. Simulate an Access Request
+## Step 4: Simulate an Access Request
 
-1. Identify a test user **without group access**.
-2. Document an access request scenario:
-   - User requests access to application resources.
-3. Review the request:
-   - Verify business need
-   - Confirm correct group assignment
+1. Identify the test user without group access.
+2. Assume the user requests access to application resources.
+3. Review the request to confirm business need.
 4. Approve the request by adding the user to:
-   - `App-Access-Users` group
-5. Deny access if not justified.
+   - App-Access-Users group
+5. Do not grant admin-level access.
 
 ---
 
-## 5. Validate Access Changes
+## Step 5: Validate Access
 
 1. Sign in as the approved test user.
-2. Confirm access is now available.
-3. Sign in as the unapproved user.
-4. Confirm access is denied or unavailable.
+2. Confirm access is available.
+3. Sign in as the unapproved test user.
+4. Confirm access is restricted or unavailable.
 
 ---
 
-## 6. Least Privilege Review
+## Step 6: Review and Remove Excess Permissions
 
-1. Review group memberships:
-   - Ensure no user has unnecessary access.
-2. Confirm:
-   - No users are in Admin groups by default.
-   - Access is only granted through security groups.
-3. Remove any excess permissions found.
+1. Navigate to **Entra ID → Groups**.
+2. Review all group memberships.
+3. Remove any users with unnecessary access.
+4. Confirm no users have admin privileges without justification.
 
 ---
 
-## 7. Document Access Review Results
+## Step 7: Access Review Confirmation
 
-Record:
-- Which users requested access
-- Which users were approved or denied
-- Which group provided access
-- Any permissions removed during review
+1. Verify all access is granted through groups.
+2. Confirm least privilege is enforced.
+3. Ensure access assignments match user roles.
 
----
