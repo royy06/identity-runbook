@@ -1,1 +1,4 @@
+## Notes
 
+- Always use **test users**, not real accounts, for MFA testing.
+- This project demonstrates creating users, groups, and enforcing security via Microsoft Entra ID.
