@@ -1,4 +1,4 @@
-Project 2: Access Requests & Least Privilege Review
+# Project 2: Access Requests & Least Privilege Review
 
 ## Objective
 Demonstrate the principle of least privilege by controlling access using security groups and validating that users only have the permissions they need.
@@ -86,3 +86,4 @@ Record:
 - Which group provided access
 - Any permissions removed during review
 
+---
