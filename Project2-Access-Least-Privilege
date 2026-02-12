@@ -1,0 +1,96 @@
+# Project 2: Access Requests & Least Privilege Review
+
+## Objective
+Demonstrate the principle of least privilege by controlling access using security groups and validating that users only have the permissions they need.
+
+---
+
+## 1. Review Existing Users and Groups
+
+1. Sign in to **Microsoft Entra Admin Center**.
+2. Navigate to **Entra ID → Users → Active users**.
+3. Identify:
+   - Test users created previously
+   - Existing security groups
+4. Navigate to **Entra ID → Groups** and review current group memberships.
+
+---
+
+## 2. Create Role-Based Security Groups
+
+1. Go to **Entra ID → Groups**.
+2. Click **New group**.
+3. Configure the group:
+   - Group type: **Security**
+   - Group name: `App-Access-Users`
+   - Description: Users with approved access to the application
+4. Save the group.
+5. Repeat to create a second group:
+   - Group name: `App-Access-Admins`
+   - Purpose: Administrative-level access (restricted)
+
+---
+
+## 3. Assign Users Based on Least Privilege
+
+1. Open the **App-Access-Users** group.
+2. Add **only one test user** as a member.
+3. Leave the second test user unassigned.
+4. Do NOT add users to the Admin group unless required.
+
+Purpose:
+- Users only receive access needed for their role.
+- No default or excessive permissions are granted.
+
+---
+
+## 4. Simulate an Access Request
+
+1. Identify a test user **without group access**.
+2. Document an access request scenario:
+   - User requests access to application resources.
+3. Review the request:
+   - Verify business need
+   - Confirm correct group assignment
+4. Approve the request by adding the user to:
+   - `App-Access-Users` group
+5. Deny access if not justified.
+
+---
+
+## 5. Validate Access Changes
+
+1. Sign in as the approved test user.
+2. Confirm access is now available.
+3. Sign in as the unapproved user.
+4. Confirm access is denied or unavailable.
+
+---
+
+## 6. Least Privilege Review
+
+1. Review group memberships:
+   - Ensure no user has unnecessary access.
+2. Confirm:
+   - No users are in Admin groups by default.
+   - Access is only granted through security groups.
+3. Remove any excess permissions found.
+
+---
+
+## 7. Document Access Review Results
+
+Record:
+- Which users requested access
+- Which users were approved or denied
+- Which group provided access
+- Any permissions removed during review
+
+---
+
+## Lessons Learned
+
+- Access should always be granted through security groups, not directly.
+- Least privilege reduces security risk and limits exposure.
+- Regular access reviews help prevent permission creep.
+- Group-based access simplifies auditing and control.
