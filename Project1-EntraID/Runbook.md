@@ -41,12 +41,10 @@ This ensures that even if someone knows the password, they cannot access the acc
 
 ## 4. Test Sign-in as a Test User
 
-1. Open a **private/incognito browser**.
-2. Go to **Microsoft 365 portal**.
-3. Sign in with a test user account:
-   - Enter **email** and **password**.
-4. Complete **MFA registration** (phone or Authenticator app).
-5. Verify you can successfully access the portal after MFA.
+I opened a private/incognito browser and signed in as testuser1@yourdomain.com.
+After entering the email and password, I was prompted to register MFA.
+I completed the registration using my phone (Authenticator app).
+I verified that I could successfully access the Microsoft 365 portal after completing MFA.
 
 ---
 
