@@ -32,11 +32,10 @@ These groups will be used to manage permissions in the lab while enforcing the p
 
 ## 3. Enable Security Defaults (MFA)
 
-1. Go to **Entra ID → Properties → Manage Security Defaults**.
-2. Turn **Enable Security Defaults** to **Yes**.
-3. Save the settings.
-4. Verify the test users are affected:
-   - When they sign in, they should be prompted to **register MFA**.
+I went to Entra ID → Properties → Manage Security Defaults and turned on Security Defaults..
+This enforces multi-factor authentication (MFA) for all users, including the test accounts. 
+After saving, I confirmed that when test users sign in, they are prompted to register MFA.
+This ensures that even if someone knows the password, they cannot access the account without the second factor.
 
 ---
 
