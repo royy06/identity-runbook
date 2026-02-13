@@ -44,12 +44,15 @@ Luckily, nothing out of the ordinary showed up, so everything looks solid.
 ---
 
 ### **Step 5: Simulate an Access Request**
-1. Select a test user and simulate an access request for a group or role.  
-2. Determine if the request should be approved or denied based on least privilege.  
+I picked testuser1 and simulated a request to join App-Access-Admins. 
+Based on the principle of least privilege, I decided this request should not be approved because the user doesn’t need admin-level access. 
+For testuser2, I simulated access to App-Access-Users, which was approved since it aligns with their role. 
+This shows how access requests are evaluated against actual job requirements.
 
 ---
 
 ### **Step 6: Validate Access**
-1. Confirm the user has only the permissions allowed after the access decision.  
-2. Ensure denied requests did not grant extra access.  
-3. Record the final access status for each user.  
+After processing the access requests, I checked both users’ permissions.
+testuser1 did not gain any admin access, and testuser2 only has access to the regular user group. 
+All denied requests correctly blocked access, and approved requests only granted what was necessary.
+The final access status for each user matches the principle of least privilege. Everything checked out with no issues.
