@@ -33,8 +33,9 @@ I removed TestUser1’s access from all groups to simulate an employee leaving t
 ---
 
 ## Step 4 – Conduct Access Review / Governance Check
-
-I ran an access review to make sure users only had the access they needed.  
+I intended to run an access review on the App-Access-Admins and App-Access-Users groups to ensure users only had the access they needed.
+Because my lab subscription had expired, I couldn’t complete the live access review. 
+I documented the current membership for both groups and noted what the expected results would be after a proper review.”
 
 ---
 
