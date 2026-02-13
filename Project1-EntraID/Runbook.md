@@ -14,26 +14,19 @@ Establish a secure identity foundation and demonstrate understanding of authenti
 
 ## 1. Create Test Users
 
-1. Sign in to **Microsoft Entra Admin Center**.
-2. Navigate to **Entra ID → Users → Active users**.
-3. Click **New user**.
-4. Fill in:
-   - **User name / email**: e.g., testuser1@yourdomain.com
-   - **Display name**: Test User 1
-   - **Password**: Auto-generate or set manually
-5. Repeat for a second test user (testuser2).
-6. Save the new users.
+I signed in to the Microsoft Entra Admin Center and created two test users. 
+The first user is testuser1@yourdomain.com with the display name Test User 1. 
+The second user is testuser2@yourdomain.com with the display name Test User 2. 
+Passwords were auto-generated. 
+Both accounts were successfully created and are ready for testing group membership and access.
 
 ---
 
 ## 2. Create Security Groups
 
-1. Navigate to **Entra ID → Groups**.
-2. Click **New group**.
-3. Select **Security** as group type.
-4. Give it a **name** (e.g., Security Test Group).
-5. Add the test users as **members**.
-6. Save the group.
+I created a security group called App-Access-Users as the group type Security.
+I added both test users as members.
+This group will be used to manage permissions in the lab while enforcing the principle of least privilege.
 
 ---
 
