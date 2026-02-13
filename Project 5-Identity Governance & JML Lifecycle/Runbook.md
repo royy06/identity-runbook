@@ -1,9 +1,10 @@
 # Project 5: Identity Governance & JML Lifecycle
----
+-
 **Objective:**  
 Manage the identity lifecycle for users — Joiner, Mover, Leaver — and ensure access follows governance policies.  
 -
-**Prerequisites:**  
+**Prerequisites:** 
+
 - Access to Microsoft Entra Admin Center  
 - Two test user accounts (TestUser1 and TestUser2)  
 - Security groups: App-Access-Users and App-Access-Admins  
