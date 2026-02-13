@@ -5,5 +5,3 @@
 - I learned how **access reviews** are used to ensure users only have the permissions they need.  
 - I realized that **lab or license limitations** can affect hands-on testing, but documenting intended steps and outcomes is still important.  
 - Overall, I understand how **identity governance enforces security and compliance** in an organization. 
-
-
