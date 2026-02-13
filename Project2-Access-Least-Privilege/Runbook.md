@@ -16,30 +16,30 @@ Simulate an access request and apply least-privilege principles.
 ---
 
 ### **Step 1: Assign Users Using Least Privilege**
-1. Navigate to **Users → All Users**.  
-2. Select the user to assign to groups.  
-3. Ensure only the minimum permissions required for their role are assigned.  
+I added the test users to their groups.
+Regular users went into App-Access-Users and admins went into App-Access-Admins.
+I made sure they only got permissions required for their role — nothing extra.
 
 ---
 
 ### **Step 2: Create Security Groups**
-1. Navigate to **Groups → New Group**.  
-2. Name the group according to role or department.  
-3. Add users to the group based on their job function.  
+I created two groups: App-Access-Users for regular users and App-Access-Admins for admin-level users. 
+I added the test users to the appropriate groups based on what they actually need to do.
+Using groups makes it easier to manage permissions without giving anyone more access than necessary.
 
 ---
 
 ### **Step 3: Review and Remove Excess Permissions**
-1. Review all users’ roles and group memberships.  
-2. Identify any permissions that exceed their job requirements.  
-3. Remove excess roles or group memberships to enforce least privilege.  
+I went through all the roles and group memberships for the test users.
+If anything was over the top or unnecessary, I removed it.
+This ensures no one has more access than they need, keeping things secure and clean.
 
 ---
 
 ### **Step 4: Review Existing Users**
-1. Navigate to **Users → All Users**.  
-2. Check each user’s current access and assigned groups.  
-3. Document any anomalies or unnecessary access.  
+I checked all the users in the tenant to see what access they had.
+I looked for anything weird or unnecessary and documented it. 
+Luckily, nothing out of the ordinary showed up, so everything looks solid.
 
 ---
 
