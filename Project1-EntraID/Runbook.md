@@ -50,8 +50,10 @@ I verified that I could successfully access the Microsoft 365 portal after compl
 
 ## 5. Validate Identity Structure
 
-1. Confirm **users exist** in Entra ID.
-2. Confirm **groups exist** and have the correct members.
-3. Confirm **Security Defaults / MFA** is enforced.
-4. Document any issues or confirmations.
+I verified that both test users, testuser1@yourdomain.com and testuser2@yourdomain.com, exist in Entra ID under Active Users.
+I confirmed that the groups App-Access-Users and App-Access-Admins exist and that the correct members are in each group.
+I also verified that Security Defaults are enabled, and both test users were prompted to register MFA when signing in. 
+Everything checked out as expected — no issues were found.
+
+
 
