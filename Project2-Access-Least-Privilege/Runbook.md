@@ -1,81 +1,54 @@
-# Project 2: Access Requests & Least Privilege Review
 
-## Objective
-Demonstrate the principle of least privilege by managing access through security groups and validating that users only have the permissions required for their role.
+# objective:
+# enforce multi-factor authentication (mfa) for a test user after a security event
+# demonstrate conditional access and least privilege
 
----
+# prerequisites:
+# admin account for microsoft entra id
+# test user from previous projects (testuser1 or testuser2)
+# microsoft 365 license assigned
+# browser: normal mode for admin, private/incognito for test user
 
-## Prerequisites
-- Microsoft Entra ID tenant
-- At least two test users
-- Admin access to Entra ID
+# step 1: log in as admin
+open_browser("https://entra.microsoft.com")
+sign_in("adminaccount", "********")
 
----
+# step 2: identify test user
+search_user("testuser1")  # or testuser2
+select_user("testuser1")
 
-## Step 1: Review Existing Users
+# step 3: navigate to conditional access
+click_menu("security")
+click_menu("conditional access")
+# select existing policy or create "+ new policy"
 
-1. Sign in to the Microsoft Entra Admin Center.
-2. Navigate to **Entra ID → Users → Active users**.
-3. Verify that at least two test users exist.
-4. Confirm that users do not have unnecessary roles or permissions assigned.
+# step 4: create/configure mfa policy
+click_button("new policy")
+enter_text("policy name", "mfa after security event")
+click_section("assignments → users or groups")
+select_user("testuser1")
+click_section("assignments → cloud apps")
+select_option("all cloud apps")  # or lab-specified
+click_section("conditions")
+select_option("sign-in risk", "high")  # or security event
+click_section("access controls → grant")
+select_option("require multi-factor authentication")
+toggle_switch("enable policy", true)
+click_button("save policy")
 
----
+# step 5: simulate security event
+simulate_sign_in_event("testuser1", "high")  # optional if lab allows
 
-## Step 2: Create Security Groups
+# step 6: test mfa enforcement
+open_private_browser()
+navigate_to("office.com")
+sign_in("testuser1", "********")
+verify_mfa_prompt()
 
-1. Navigate to **Entra ID → Groups**.
-2. Select **New group**.
-3. Configure the group:
-   - Group type: Security
-   - Group name: App-Access-Users
-   - Membership type: Assigned
-4. Create the group.
-5. Repeat the process to create:
-   - Group name: App-Access-Admins
-
----
-
-## Step 3: Assign Users Using Least Privilege
-
-1. Open the **App-Access-Users** group.
-2. Add **one test user only**.
-3. Do not assign users to the Admin group unless required.
-4. Leave the second test user without group access.
-
----
-
-## Step 4: Simulate an Access Request
-
-1. Identify the test user without group access.
-2. Assume the user requests access to application resources.
-3. Review the request to confirm business need.
-4. Approve the request by adding the user to:
-   - App-Access-Users group
-5. Do not grant admin-level access.
-
----
-
-## Step 5: Validate Access
-
-1. Sign in as the approved test user.
-2. Confirm access is available.
-3. Sign in as the unapproved test user.
-4. Confirm access is restricted or unavailable.
-
----
-
-## Step 6: Review and Remove Excess Permissions
-
-1. Navigate to **Entra ID → Groups**.
-2. Review all group memberships.
-3. Remove any users with unnecessary access.
-4. Confirm no users have admin privileges without justification.
-
----
-
-## Step 7: Access Review Confirmation
-
-1. Verify all access is granted through groups.
-2. Confirm least privilege is enforced.
-3. Ensure access assignments match user roles.
-
+# step 7: verification & documentation
+document_runbook("""
+test user was required to use mfa after a security event.
+conditional access policy 'mfa after security event' was applied successfully.
+login verification confirmed mfa prompt.
+no administrative privileges were granted.
+""")
