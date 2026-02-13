@@ -53,13 +53,3 @@ Simulate an access request and apply least-privilege principles.
 1. Confirm the user has only the permissions allowed after the access decision.  
 2. Ensure denied requests did not grant extra access.  
 3. Record the final access status for each user.  
-
----
-
-## **Deliverables Table Example**
-
-| User | Action | Group | Decision | Risk Analysis | Evidence |
-|------|--------|-------|----------|---------------|----------|
-| User1@test.com | Assigned | SG_HR | Approved | Low – aligns with role | Document |
-| User2@test.com | Removed Excess | SG_IT | Corrected | High – reduced risk | Document |
-| User3@test.com | Access Request | SG_Finance | Denied | High – exceeds least privilege | Document |
