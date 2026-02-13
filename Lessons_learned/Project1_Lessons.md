@@ -1,4 +1,4 @@
-## Lessons Learned
+## Lessons Learned – Project 1 (Identity Foundation & Access Model)
 
 - Microsoft Entra ID separates authentication from authorization, and both must be configured to secure user access.
 - Security groups are more efficient and scalable than assigning permissions directly to individual users.
