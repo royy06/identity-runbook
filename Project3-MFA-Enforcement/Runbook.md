@@ -16,7 +16,6 @@ Demonstrate identity protection using MFA.
 
 ---
 
-## **Procedure**
 
 ### **Step 1: Simulate a Credential Risk Scenario**
 1. Identify a test user account to simulate a security event (e.g., risky login).  
