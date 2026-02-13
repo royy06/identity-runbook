@@ -1,91 +1,85 @@
-1. Purpose
-Enforce Multi-Factor Authentication (MFA) for test users and monitor security events in Microsoft Entra ID.
+# OBJECTIVE
+# ------------------------------
+# Automate access review and enforce least privilege principles by:
+# 1. Listing all users, their group memberships, and roles.
+# 2. Identifying roles or permissions outside the allowed minimum.
+# 3. Generating a CSV summary for documentation and runbook submission.
 
-2. Prerequisites
-Admin access to Microsoft Entra ID / Microsoft 365
+# ------------------------------
+# PREREQUISITES
+# ------------------------------
+# 1. Admin access to Microsoft Entra ID / Microsoft 365.
+# 2. PowerShell installed (Windows 10/11 recommended).
+# 3. AzureAD or AzureADPreview module installed.
+#    Install via: Install-Module AzureAD
+# 4. Test users and security groups already created (Project 1).
+# 5. Defined allowed roles for least privilege enforcement.
 
+# ------------------------------
+# 1. Connect to Microsoft Entra ID
+# ------------------------------
+Connect-AzureAD
+# A pop-up will ask for admin credentials
 
-Two test users created in Project 1
+# ------------------------------
+# 2. Define allowed roles / whitelist
+# ------------------------------
+$AllowedRoles = @(
+    "User",
+    "Guest",
+    "Member"
+)
 
+# ------------------------------
+# 3. Retrieve all users
+# ------------------------------
+$Users = Get-AzureADUser -All $true
 
-Two security groups from Project 1 (e.g., SG_HR, SG_IT)
+# ------------------------------
+# 4. Create output folder
+# ------------------------------
+$OutputFolder = "$env:USERPROFILE\Documents\Project2_Access_LeastPrivilege"
+New-Item -ItemType Directory -Path $OutputFolder -Force
 
+# ------------------------------
+# 5. Initialize output CSV
+# ------------------------------
+$OutputCSV = "$OutputFolder\AccessReview.csv"
+$Results = @()
 
+# ------------------------------
+# 6. Check each user
+# ------------------------------
+foreach ($user in $Users) {
+    # Get group memberships
+    $Groups = Get-AzureADUserMembership -ObjectId $user.ObjectId | Select-Object DisplayName,ObjectType
 
-3. Procedure
-Step 1: Access Entra ID
-Sign in to Microsoft 365 Admin Center.
+    # Get directory roles
+    $Roles = Get-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId | Select-Object AppRoleId,ResourceDisplayName
 
+    # Identify roles not in allowed list
+    $ExcessRoles = @()
+    foreach ($role in $Roles) {
+        if (-not ($AllowedRoles -contains $role.ResourceDisplayName)) {
+            $ExcessRoles += $role.ResourceDisplayName
+            # Optionally remove the role
+            # Remove-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -AppRoleAssignmentId $role.Id
+        }
+    }
 
-Click Show all → Entra ID.
+    # Create result object
+    $Results += [PSCustomObject]@{
+        User           = $user.UserPrincipalName
+        Groups         = ($Groups.DisplayName -join ", ")
+        Roles          = ($Roles.ResourceDisplayName -join ", ")
+        ExcessRoles    = ($ExcessRoles -join ", ")
+        LeastPrivilege = if ($ExcessRoles.Count -eq 0) { "✅" } else { "❌" }
+    }
+}
 
+# ------------------------------
+# 7. Export results to CSV
+# ------------------------------
+$Results | Export-Csv -Path $OutputCSV -NoTypeInformation
 
-Verify you are in the Entra ID portal.
-
-
-
-Step 2: Enable MFA for Users
-Navigate to Users → All Users.
-
-
-Select the test users.
-
-
-Click Authentication methods → Require MFA.
-
-
-Confirm status shows Enabled / Enforced.
-
-
-Take screenshots of each user’s MFA status.
-
-
-
-Step 3: Apply Conditional Access Policy
-Navigate to Security → Conditional Access → New Policy.
-
-
-Name the policy: MFA Enforcement – Project 3.
-
-
-Assign Users or Groups (SG_HR, SG_IT).
-
-
-Under Grant → Require multi-factor authentication, select Require MFA.
-
-
-Enable the policy and click Save.
-
-
-Take a screenshot of the policy assignment.
-
-
-
-Step 4: Monitor Security Events
-Navigate to Security → Audit logs.
-
-
-Filter for Sign-in events and MFA activity.
-
-
-Review for:
-
-
-Failed sign-ins
-
-
-MFA registration completion
-
-
-Policy application
-
-
-Take screenshots of relevant events.
-
-
-
-Step 5: Document Outputs
-Save screenshots in folder: Project3_MFA_Events.
-
-
-Create a table for MFA enforcement evidence:
+Write-Host "Access review complete. Results exported to $OutputCSV"
