@@ -1,64 +1,36 @@
-Step 1: Log in as Admin
-Open https://entra.microsoft.com
 
+# Step 1: Log in as Admin
+open_browser("https://entra.microsoft.com")
+sign_in(username="AdminAccount", password="********")
 
-Sign in using the admin account
+# Step 2: Identify Test User
+select_user("TestUser1")  # or TestUser2
 
+# Step 3: Navigate to Conditional Access
+click_menu("Security")
+click_menu("Conditional Access")
+# Select existing policy or create new: "+ New Policy"
 
+# Step 4: Configure MFA Policy
+create_policy("MFA After Security Event")
+assign_policy_users("TestUser1")        # Assign the test user
+assign_policy_apps("All cloud apps")    # Or lab-specified app
+set_policy_conditions("Security Event") # Set security event or sign-in risk
+set_access_control("Grant", "Require multi-factor authentication")
+enable_policy(True)
+save_policy()
 
-Step 2: Identify Test User
-Select the test user for MFA enforcement
+# Step 5: Simulate Security Event
+simulate_security_event("TestUser1")  # Optional, if lab allows
 
+# Step 6: Test MFA Enforcement
+open_private_browser()
+sign_in(username="TestUser1", password="********")
+verify_mfa_prompt()                    # Confirm MFA is triggered
 
-Confirm the user is active and licensed
-
-
-
-Step 3: Navigate to Conditional Access
-Click Security → Conditional Access
-
-
-Select existing policy or click + New Policy
-
-
-
-Step 4: Configure MFA Policy
-Enter policy name: MFA After Security Event
-
-
-Assign Users or Groups → select the test user
-
-
-Assign Cloud Apps → select all or lab-specified apps
-
-
-Set Conditions → security event or sign-in risk
-
-
-Access Controls → Grant → Require multi-factor authentication
-
-
-Enable the policy and save
-
-
-
-Step 5: Simulate Security Event
-Trigger a security event for the test user, or document the assumed event
-
-
-
-Step 6: Test MFA Enforcement
-Log in as the test user in a private browser
-
-
-Attempt login to trigger the security event
-
-
-Confirm MFA is prompted
-
-
-
-Step 7: Verification
-Document that:
-The test user was required to use MFA after the security event. Conditional Access policy was applied successfully. No administrative privileges were granted.
-
+# Step 7: Verification
+document_runbook("""
+The test user was required to use MFA after the security event.
+Conditional Access policy was applied successfully.
+No administrative privileges were granted.
+""")
