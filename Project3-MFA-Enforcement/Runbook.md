@@ -1,52 +1,55 @@
+# **PROJECT 3: MFA Enforcement After Security Event**
 
-# Step 1: Log in as Admin
-open_browser("https://entra.microsoft.com")
-sign_in(username="AdminAccount", password="********")
-# Wait for dashboard to load
+---
 
-# Step 2: Identify Test User
-click_menu("Users")
-search_user("TestUser1")  # or TestUser2
-select_user("TestUser1")
-# Confirm user is active and has a Microsoft 365 license
+## **Objective**
+Demonstrate identity protection using MFA.  
 
-# Step 3: Navigate to Conditional Access
-click_menu("Security")
-click_menu("Conditional Access")
-# If existing policy exists, select it
-# Otherwise, click "+ New Policy"
+—
 
-# Step 4: Create/Configure MFA Policy
-click_button("New Policy")               # If creating new
-enter_text("Policy Name", "MFA After Security Event")
-click_section("Assignments → Users or Groups")
-select_user("TestUser1")
-click_section("Assignments → Cloud Apps")
-select_option("All cloud apps")          # Or lab-specified app
-click_section("Conditions")
-select_option("Sign-in Risk", "High")   # Or security event per lab
-click_section("Access Controls → Grant")
-select_option("Require multi-factor authentication")
-toggle_switch("Enable Policy", True)
-click_button("Save Policy")
-# Policy is now active
+## **Prerequisites**
+1. Admin access to Microsoft Entra ID / Microsoft 365.  
+2. Test users created in Project 1.  
+3. Security groups created in Project 1.  
+4. PowerShell installed (Windows 10/11 recommended).  
+5. AzureAD or AzureADPreview module installed.  
 
-# Step 5: Simulate Security Event
-# Optional if lab allows
-simulate_sign_in_event("TestUser1", risk="High")
-# Or document assumed security event
+---
 
-# Step 6: Test MFA Enforcement
-open_private_browser()
-navigate_to("office.com")
-sign_in(username="TestUser1", password="********")
-# Attempt login to trigger security event
-verify_mfa_prompt()                      # Confirm MFA is prompted
+## **Procedure**
 
-# Step 7: Verification & Documentation
-document_runbook("""
-The test user was required to use MFA after a security event.
-Conditional Access policy 'MFA After Security Event' was applied successfully.
-Login verification confirmed MFA prompt.
-No administrative privileges were granted.
-""")
+### **Step 1: Simulate a Credential Risk Scenario**
+1. Identify a test user account to simulate a security event (e.g., risky login).  
+2. Document the scenario details, such as login location, device, or sign-in risk.  
+
+---
+
+### **Step 2: Enforce MFA or Confirm Security Defaults**
+1. Navigate to **Users → All Users** in Microsoft Entra ID.  
+2. Enable MFA for the test user(s) or confirm that Security Defaults are active.  
+3. Optionally, assign Conditional Access policy enforcing MFA for specific groups.  
+
+---
+
+### **Step 3: Explain How MFA Reduces Risk**
+1. Document how enabling MFA mitigates credential compromise.  
+2. Explain MFA methods used (e.g., SMS, authenticator app, hardware token).  
+
+---
+
+### **Step 4: Document Login Impact**
+1. Test sign-in for the MFA-enabled account.  
+2. Record login workflow changes and user experience.  
+3. Include a summary of any issues or successes.  
+
+---
+
+## **Deliverables Table Example**
+
+| User | MFA Status | Security Event | Risk Mitigation | Login Impact | Evidence |
+|------|------------|----------------|----------------|--------------|----------|
+| User1@test.com | Enabled | Risky Login | MFA blocks unauthorized access | Login requires authenticator approval | Document |
+| User2@test.com | Security Defaults Active | None | Ensures baseline protection | Standard MFA prompts | Document |
+
+---
+
