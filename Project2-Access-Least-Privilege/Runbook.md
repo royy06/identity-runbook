@@ -58,5 +58,3 @@
 | User2@test.com | SG_IT | Owner | Denied | ✅ |
 
 ---
-
-### **GitHub Repo Structure (Recommended)**
