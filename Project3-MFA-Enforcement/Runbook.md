@@ -18,18 +18,24 @@ Demonstrate identity protection using MFA.
 
 
 ### **Step 1: Simulate a Credential Risk Scenario**
-1. Identify a test user account to simulate a security event (e.g., risky login).  
-2. Document the scenario details, such as login location, device, or sign-in risk.  
+The test user testuser1@tenant.onmicrosoft.com was used to simulate a credential risk scenario.
+A sign-in was performed from a new browser in a private window, representing a login from an unfamiliar device. 
+The sign-in location differed from previous activity. 
+This created a scenario where credentials alone could allow access, demonstrating a potential security risk. 
+The sign-in logs show the new device, browser, and location.
 
----
+
 
 ### **Step 2: Enforce MFA or Confirm Security Defaults**
-1. Navigate to **Users → All Users** in Microsoft Entra ID.  
-2. Enable MFA for the test user(s) or confirm that Security Defaults are active.  
-3. Optionally, assign Conditional Access policy enforcing MFA for specific groups.  
+Security Defaults were enabled in Microsoft Entra ID to enforce multi-factor authentication for the test user.
+This ensures that all sign-ins now require a second factor beyond the password. 
+After enabling Security Defaults, the test user was required to complete MFA via the registered phone method during sign-in. 
+This change prevents unauthorized access even if credentials are compromised.
+
+
 
 ---
-
+### **Step 3: How MFA reduces risk
 Enabling multi-factor authentication reduces credential compromise by requiring an additional verification factor beyond a password.
 Even if credentials are stolen, attackers cannot authenticate without the second factor. 
 MFA also helps detect and block suspicious sign-ins from unfamiliar devices or locations. 
@@ -37,10 +43,11 @@ This significantly lowers the risk of unauthorized access.
 
 ---
 
-### **Step 4: Document Login Impact**
-1. Test sign-in for the MFA-enabled account.  
-2. Record login workflow changes and user experience.  
-3. Include a summary of any issues or successes.  
+### **Step 4: Document Login Impact
+After enforcing MFA, the test user signed in using their password and was prompted for an additional verification code via the registered phone method.
+Selecting “No” for “Stay signed in?” ensured the MFA prompt appeared immediately.
+The login workflow now requires one extra step, slightly increasing sign-in time but greatly improving account security. 
+No issues were encountered during testing, and the sign-in log confirms multi-factor authentication was successfully applied.
 
 ---
 
@@ -52,4 +59,3 @@ This significantly lowers the risk of unauthorized access.
 | User2@test.com | Security Defaults Active | None | Ensures baseline protection | Standard MFA prompts | Document |
 
 ---
-
