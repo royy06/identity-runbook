@@ -1,85 +1,62 @@
-# OBJECTIVE
-# ------------------------------
-# Automate access review and enforce least privilege principles by:
-# 1. Listing all users, their group memberships, and roles.
-# 2. Identifying roles or permissions outside the allowed minimum.
-# 3. Generating a CSV summary for documentation and runbook submission.
+# **Project 2 Runbook – Access Request & Least Privilege Review**
+---
+## **Objective**
+- Review user access requests and group memberships.  
+- Apply the principle of least privilege to ensure users have only the permissions required for their roles.  
+- Document findings for compliance and security auditing.  
 
-# ------------------------------
-# PREREQUISITES
-# ------------------------------
-# 1. Admin access to Microsoft Entra ID / Microsoft 365.
-# 2. PowerShell installed (Windows 10/11 recommended).
-# 3. AzureAD or AzureADPreview module installed.
-#    Install via: Install-Module AzureAD
-# 4. Test users and security groups already created (Project 1).
-# 5. Defined allowed roles for least privilege enforcement.
+---
 
-# ------------------------------
-# 1. Connect to Microsoft Entra ID
-# ------------------------------
-Connect-AzureAD
-# A pop-up will ask for admin credentials
+## **Prerequisites**
+1. Admin access to Microsoft Entra ID / Microsoft 365.  
+2. Test users and security groups created in Project 1.  
+3. PowerShell installed (Windows 10/11 recommended).  
+4. AzureAD or AzureADPreview PowerShell module installed.  
+5. Defined allowed roles for least privilege enforcement (e.g., User, Guest, Member).  
 
-# ------------------------------
-# 2. Define allowed roles / whitelist
-# ------------------------------
-$AllowedRoles = @(
-    "User",
-    "Guest",
-    "Member"
-)
+---
 
-# ------------------------------
-# 3. Retrieve all users
-# ------------------------------
-$Users = Get-AzureADUser -All $true
+## **Procedure**
 
-# ------------------------------
-# 4. Create output folder
-# ------------------------------
-$OutputFolder = "$env:USERPROFILE\Documents\Project2_Access_LeastPrivilege"
-New-Item -ItemType Directory -Path $OutputFolder -Force
+### **Step 1: Access Microsoft Entra ID**
+1. Sign in to **Microsoft 365 Admin Center**.  
+2. Click **Show all → Entra ID**.  
+3. Verify you are in the **Entra ID portal**.  
 
-# ------------------------------
-# 5. Initialize output CSV
-# ------------------------------
-$OutputCSV = "$OutputFolder\AccessReview.csv"
-$Results = @()
+---
 
-# ------------------------------
-# 6. Check each user
-# ------------------------------
-foreach ($user in $Users) {
-    # Get group memberships
-    $Groups = Get-AzureADUserMembership -ObjectId $user.ObjectId | Select-Object DisplayName,ObjectType
+### **Step 2: Review User Access**
+1. Navigate to **Users → Access Reviews / Access Requests**.  
+2. Select each test user for review.  
+3. Check group memberships and assigned roles.  
+4. Take screenshots of current access for documentation.  
 
-    # Get directory roles
-    $Roles = Get-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId | Select-Object AppRoleId,ResourceDisplayName
+---
 
-    # Identify roles not in allowed list
-    $ExcessRoles = @()
-    foreach ($role in $Roles) {
-        if (-not ($AllowedRoles -contains $role.ResourceDisplayName)) {
-            $ExcessRoles += $role.ResourceDisplayName
-            # Optionally remove the role
-            # Remove-AzureADUserAppRoleAssignment -ObjectId $user.ObjectId -AppRoleAssignmentId $role.Id
-        }
-    }
+### **Step 3: Apply Least Privilege**
+1. Remove any unnecessary roles or permissions.  
+2. Ensure users only have permissions required for their job.  
+3. Take screenshots of updated permissions.  
 
-    # Create result object
-    $Results += [PSCustomObject]@{
-        User           = $user.UserPrincipalName
-        Groups         = ($Groups.DisplayName -join ", ")
-        Roles          = ($Roles.ResourceDisplayName -join ", ")
-        ExcessRoles    = ($ExcessRoles -join ", ")
-        LeastPrivilege = if ($ExcessRoles.Count -eq 0) { "✅" } else { "❌" }
-    }
-}
+---
 
-# ------------------------------
-# 7. Export results to CSV
-# ------------------------------
-$Results | Export-Csv -Path $OutputCSV -NoTypeInformation
+### **Step 4: Approve or Deny Access Requests**
+1. Navigate to **pending access requests**.  
+2. Approve requests that meet least privilege standards.  
+3. Deny requests that grant excessive permissions.  
+4. Take screenshots of approvals/denials.  
 
-Write-Host "Access review complete. Results exported to $OutputCSV"
+---
+
+### **Step 5: Document Outputs**
+1. Save all screenshots in a folder named `Project2_Access_LeastPrivilege`.  
+2. Create a summary table of your review:
+
+| User | Group | Role | Access Status | Least Privilege Applied |
+|------|-------|------|---------------|------------------------|
+| User1@test.com | SG_HR | Member | Approved | ✅ |
+| User2@test.com | SG_IT | Owner | Denied | ✅ |
+
+---
+
+### **GitHub Repo Structure (Recommended)**
