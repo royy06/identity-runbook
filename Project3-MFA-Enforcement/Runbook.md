@@ -30,9 +30,10 @@ Demonstrate identity protection using MFA.
 
 ---
 
-### **Step 3: Explain How MFA Reduces Risk**
-1. Document how enabling MFA mitigates credential compromise.  
-2. Explain MFA methods used (e.g., SMS, authenticator app, hardware token).  
+Enabling multi-factor authentication reduces credential compromise by requiring an additional verification factor beyond a password.
+Even if credentials are stolen, attackers cannot authenticate without the second factor. 
+MFA also helps detect and block suspicious sign-ins from unfamiliar devices or locations. 
+This significantly lowers the risk of unauthorized access.
 
 ---
 
