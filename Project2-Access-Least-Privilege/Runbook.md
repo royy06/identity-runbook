@@ -1,54 +1,91 @@
+1. Purpose
+Enforce Multi-Factor Authentication (MFA) for test users and monitor security events in Microsoft Entra ID.
 
-# objective:
-# enforce multi-factor authentication (mfa) for a test user after a security event
-# demonstrate conditional access and least privilege
+2. Prerequisites
+Admin access to Microsoft Entra ID / Microsoft 365
 
-# prerequisites:
-# admin account for microsoft entra id
-# test user from previous projects (testuser1 or testuser2)
-# microsoft 365 license assigned
-# browser: normal mode for admin, private/incognito for test user
 
-# step 1: log in as admin
-open_browser("https://entra.microsoft.com")
-sign_in("adminaccount", "********")
+Two test users created in Project 1
 
-# step 2: identify test user
-search_user("testuser1")  # or testuser2
-select_user("testuser1")
 
-# step 3: navigate to conditional access
-click_menu("security")
-click_menu("conditional access")
-# select existing policy or create "+ new policy"
+Two security groups from Project 1 (e.g., SG_HR, SG_IT)
 
-# step 4: create/configure mfa policy
-click_button("new policy")
-enter_text("policy name", "mfa after security event")
-click_section("assignments → users or groups")
-select_user("testuser1")
-click_section("assignments → cloud apps")
-select_option("all cloud apps")  # or lab-specified
-click_section("conditions")
-select_option("sign-in risk", "high")  # or security event
-click_section("access controls → grant")
-select_option("require multi-factor authentication")
-toggle_switch("enable policy", true)
-click_button("save policy")
 
-# step 5: simulate security event
-simulate_sign_in_event("testuser1", "high")  # optional if lab allows
 
-# step 6: test mfa enforcement
-open_private_browser()
-navigate_to("office.com")
-sign_in("testuser1", "********")
-verify_mfa_prompt()
+3. Procedure
+Step 1: Access Entra ID
+Sign in to Microsoft 365 Admin Center.
 
-# step 7: verification & documentation
-document_runbook("""
-test user was required to use mfa after a security event.
-conditional access policy 'mfa after security event' was applied successfully.
-login verification confirmed mfa prompt.
-no administrative privileges were granted.
 
+Click Show all → Entra ID.
+
+
+Verify you are in the Entra ID portal.
+
+
+
+Step 2: Enable MFA for Users
+Navigate to Users → All Users.
+
+
+Select the test users.
+
+
+Click Authentication methods → Require MFA.
+
+
+Confirm status shows Enabled / Enforced.
+
+
+Take screenshots of each user’s MFA status.
+
+
+
+Step 3: Apply Conditional Access Policy
+Navigate to Security → Conditional Access → New Policy.
+
+
+Name the policy: MFA Enforcement – Project 3.
+
+
+Assign Users or Groups (SG_HR, SG_IT).
+
+
+Under Grant → Require multi-factor authentication, select Require MFA.
+
+
+Enable the policy and click Save.
+
+
+Take a screenshot of the policy assignment.
+
+
+
+Step 4: Monitor Security Events
+Navigate to Security → Audit logs.
+
+
+Filter for Sign-in events and MFA activity.
+
+
+Review for:
+
+
+Failed sign-ins
+
+
+MFA registration completion
+
+
+Policy application
+
+
+Take screenshots of relevant events.
+
+
+
+Step 5: Document Outputs
+Save screenshots in folder: Project3_MFA_Events.
+
+
+Create a table for MFA enforcement evidence:
