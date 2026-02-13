@@ -30,6 +30,3 @@ I signed in as the test user in a private browser using the temporary password. 
 
 ---
 
-## Step 6 – Document the Process
-I documented everything I did: which account was locked, how I verified identity, password reset details, unlock confirmation, and successful sign-in. This makes it easy to repeat the process for future account lockouts.
-
