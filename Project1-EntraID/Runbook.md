@@ -1,6 +1,14 @@
 # Project 1: Identity Foundation & Access Model
 ## Objective
 Establish a secure identity foundation and demonstrate understanding of authentication vs authorization in Microsoft Entra ID.
+---
+
+## **Prerequisites**
+1. Admin access to Microsoft Entra ID / Microsoft 365.  
+2. PowerShell installed (Windows 10/11 recommended).  
+3. AzureAD or AzureADPreview PowerShell module installed.  
+4. Basic understanding of groups, roles, and MFA concepts.  
+5. Access to Microsoft 365 Admin Center and Entra ID portal.  
 
 ---
 
