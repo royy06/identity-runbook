@@ -1,5 +1,5 @@
 # Project 7: Shared Responsibility & Incident Ownership
-
+---
 **Objective:**  
 Explain Microsoft vs customer responsibility during incidents.  
 -
