@@ -1,1 +1,9 @@
+## Lessons Learned
+
+- I learned how the **Joiner, Mover, Leaver (JML) lifecycle** works and why it’s important to update access when a user changes roles or leaves.  
+- I saw how **group memberships control access** and how moving users between groups reflects real-world role changes.  
+- I learned how **access reviews** are used to ensure users only have the permissions they need.  
+- I realized that **lab or license limitations** can affect hands-on testing, but documenting intended steps and outcomes is still important.  
+- Overall, I understand how **identity governance enforces security and compliance** in an organization. 
+
 
