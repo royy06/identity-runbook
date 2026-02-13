@@ -51,4 +51,4 @@ test user was required to use mfa after a security event.
 conditional access policy 'mfa after security event' was applied successfully.
 login verification confirmed mfa prompt.
 no administrative privileges were granted.
-""")
+
