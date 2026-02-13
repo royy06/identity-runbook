@@ -1,4 +1,4 @@
-# Project 4 – Account Lockout & Password Reset Runbook
+# Project 4 – Account Lockout & Password Reset 
 
 ## Objective
 Handle a common identity support issue using a repeatable process, making sure users get back into their accounts securely while keeping everything compliant.
