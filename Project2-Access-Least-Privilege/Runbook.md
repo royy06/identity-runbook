@@ -2,8 +2,9 @@
 
 ---
 
-## **Objective**
+## **Objective
 Simulate an access request and apply least-privilege principles.  
+
 ---
 
 ## **Prerequisites**
