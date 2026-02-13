@@ -24,9 +24,9 @@ Both accounts were successfully created and are ready for testing group membersh
 
 ## 2. Create Security Groups
 
-I created a security group called App-Access-Users as the group type Security.
+I created security groups called App-Access-Users and App-Access-Admins as the group type Security.
 I added both test users as members.
-This group will be used to manage permissions in the lab while enforcing the principle of least privilege.
+These groups will be used to manage permissions in the lab while enforcing the principle of least privilege.
 
 ---
 
