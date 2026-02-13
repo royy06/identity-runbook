@@ -2,7 +2,7 @@
 
 **Objective:**  
 Explain Microsoft vs customer responsibility during incidents.  
-
+-
 **Prerequisites:**  
 - Access to Microsoft 365 or Azure portal  
 - Basic understanding of cloud services and incident management  
