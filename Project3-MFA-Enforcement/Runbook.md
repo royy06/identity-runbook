@@ -24,7 +24,7 @@ The sign-in location differed from previous activity.
 This created a scenario where credentials alone could allow access, demonstrating a potential security risk. 
 The sign-in logs show the new device, browser, and location.
 
-
+---
 
 ### **Step 2: Enforce MFA or Confirm Security Defaults**
 Security Defaults were enabled in Microsoft Entra ID to enforce multi-factor authentication for the test user.
