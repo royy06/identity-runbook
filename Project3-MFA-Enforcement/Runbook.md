@@ -5,7 +5,7 @@
 ## **Objective**
 Demonstrate identity protection using MFA.  
 
-—
+---
 
 ## **Prerequisites**
 1. Admin access to Microsoft Entra ID / Microsoft 365.  
