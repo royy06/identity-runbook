@@ -19,7 +19,7 @@ This repository contains all documentation, projects, and resources for identity
 
 1. [Project 1: Identity Foundation & Access Model](Runbook_Projects/Project1_IdentityFoundation.md)
 2. [Project 2: Access Request & Least-Privilege Review](Runbook_Projects/Project2_AccessRequest.md)
-3. Project3-MFA-Enforcement/Runbook.md
+3. Project3-MFA-Enforcement
 4. [Project 4: Account Lockout & Password Reset Runbook](Runbook_Projects/Project4_AccountLockout.md)
 5. [Project 5: Identity Governance & JML Lifecycle](Runbook_Projects/Project5_IdentityGovernance.md)
 6. [Project 6: Security Alert Awareness & Escalation](Runbook_Projects/Project6_SecurityAlertEscalation.md)
