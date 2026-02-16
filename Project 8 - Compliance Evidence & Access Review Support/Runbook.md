@@ -31,7 +31,24 @@ I recorded the steps followed during access reviews, including how users were ad
 
 ## Step 4 – Explain Compliance Impact
 
-I explained how maintaining accurate access records and performing reviews supports compliance with internal policies and external audit requirements.  
+I explained the compliance impact of reviewing user access and documenting group memberships. 
+Even though I couldn’t run a live access review due to my expired subscription, I documented the intended process.
+Maintaining accurate records ensures:
+Users only have access to what their role requires:
+
+Audit requirements can be met
+
+Unauthorized access is minimized
+
+Accountability is clear for each group or user
+
+
+**Example summary table:**  
+
+| User       | Group                | Access Status | Compliance Note                     |  
+|------------|--------------------|---------------|------------------------------------|  
+| TestUser1  | App-Access-Users     | Active        | Access aligns with role            |  
+| TestUser2  | App-Access-Admins    | Active        | Elevated access matches responsibilities |  
 
 ---
 
