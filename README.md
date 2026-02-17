@@ -37,7 +37,8 @@ Use these images in the project runbooks as needed.
 
 ## Lessons Learned
 
-Project reflections and takeaways are in the [Lessons_Learned](Lessons_Learned/) folder.  
+Project reflections and takeaways are in the 
+[Lessons Learned](./Lessons_learned) folder.  
 Each project has its own file (Project1_Lessons.md, Project2_Lessons.md, etc.).
 
 ---
