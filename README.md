@@ -20,11 +20,11 @@ This repository contains all documentation, projects, and resources for identity
 - [Project 1 – Entra ID](./Project1-EntraID)
 - [Project 2 – Access Least Privilege](./Project2-Access-Least-Privilege)
 - [Project 3 – MFA Enforcement](./Project3-MFA-Enforcement)
-- [Project 4 – Account Lockout & Password Policy](./Project%204%20-%20Account%20Lockout%20%26%20Pa...)
-- [Project 5 – Identity Governance](./Project%205-Identity%20Governance%20%26...)
-- [Project 6 – Security Alert Awareness](./Project%206-Security%20Alert%20Awareness...)
-- [Project 7 – Shared Responsibility](./Project%207-Shared%20Responsibility%20%26...)
-- [Project 8 – Compliance Evidence & Access Review](./Project%208%20-%20Compliance%20Evidence...)
+- [Project 4 – Account Lockout & Password Policy](./Project-4-Account-Lockout)
+- [Project 5 – Identity Governance](./Project-5-Identity-Governance)
+- [Project 6 – Security Alert Awareness](./Project-6-Security-Alert-Awareness)
+- [Project 7 – Shared Responsibility](./Project-7-Shared-Responsibility)
+- [Project 8 – Compliance Evidence & Access Review](./Project-8-Compliance-Evidence)
 
 ---
 
