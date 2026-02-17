@@ -17,7 +17,7 @@ This repository contains all documentation, projects, and resources for identity
 
 ## Runbook Projects
 
-1. Project1-EntraID/Runbook.md
+1. (Project1-EntraID/Runbook.md)
 2. [Project 2: Access Request & Least-Privilege Review](Runbook_Projects/Project2_AccessRequest.md)
 3. Project3-MFA-Enforcement
 4. [Project 4: Account Lockout & Password Reset Runbook](Runbook_Projects/Project4_AccountLockout.md)
