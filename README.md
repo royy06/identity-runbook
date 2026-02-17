@@ -17,16 +17,14 @@ This repository contains all documentation, projects, and resources for identity
 
 ## Runbook Projects
 
-1. (Project1-EntraID/Runbook.md)
-2. [Project 2: Access Request & Least-Privilege Review](Runbook_Projects/Project2_AccessRequest.md)
-3. Project3-MFA-Enforcement
-4. [Project 4: Account Lockout & Password Reset Runbook](Runbook_Projects/Project4_AccountLockout.md)
-5. [Project 5: Identity Governance & JML Lifecycle](Runbook_Projects/Project5_IdentityGovernance.md)
-6. [Project 6: Security Alert Awareness & Escalation](Runbook_Projects/Project6_SecurityAlertEscalation.md)
-7. [Project 7: Shared Responsibility & Incident Ownership](Runbook_Projects/Project7_SharedResponsibility.md)
-8. [Project 8: Compliance Evidence & Access Review Support](Runbook_Projects/Project8_ComplianceEvidence.md)
-9. [Project 9: Zero Trust & Conditional Access Mapping](Runbook_Projects/Project9_ZeroTrustMapping.md)
-10. [Project 10: End-to-End Ticket Handling Capstone](Runbook_Projects/Project10_EndToEndTicket.md)
+- [Project 1 – Entra ID](./Project1-EntraID)
+- [Project 2 – Access Least Privilege](./Project2-Access-Least-Privilege)
+- [Project 3 – MFA Enforcement](./Project3-MFA-Enforcement)
+- [Project 4 – Account Lockout & Password Policy](./Project%204%20-%20Account%20Lockout%20%26%20Pa...)
+- [Project 5 – Identity Governance](./Project%205-Identity%20Governance%20%26...)
+- [Project 6 – Security Alert Awareness](./Project%206-Security%20Alert%20Awareness...)
+- [Project 7 – Shared Responsibility](./Project%207-Shared%20Responsibility%20%26...)
+- [Project 8 – Compliance Evidence & Access Review](./Project%208%20-%20Compliance%20Evidence...)
 
 ---
 
