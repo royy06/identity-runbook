@@ -30,7 +30,7 @@ This repository contains all documentation, projects, and resources for identity
 
 ## Screenshots
 
-All project images are in the [Screenshots](Screenshots/) folder.  
+All project images are in the Screenshots folder.  
 Use these images in the project runbooks as needed.
 
 ---
