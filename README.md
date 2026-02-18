@@ -25,6 +25,7 @@ This repository contains all documentation, projects, and resources for identity
 - [Project 6 – Security Alert Awareness & Escalation](./Project%206-Security%20Alert%20Awareness%20%26%20Escalation)
 - [Project 7 – Shared Responsibility & Incident Ownership](./Project%207-Shared%20Responsibility%20%26%20Incident%20Ownership)
 - [Project 8 – Compliance Evidence & Access Review Support](./Project%208%20-%20Compliance%20Evidence%20%26%20Access%20Review%20Support)
+- [Project 9 – Zero Trust & Conditional Access Mapping](./Project%209-%20Zero%20Trust%20%26%20Conditional%20Access%20Mapping)
 
 ---
 
