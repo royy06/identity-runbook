@@ -11,25 +11,25 @@ Support an audit request for access evidence.
 
 ---
 
-## Step 1 – Identify Evidence
+## Step 1: Identify Evidence
 
 I determined what evidence an auditor would request, such as user access lists, group memberships, and access review logs.  
 
 ---
 
-## Step 2 – Review Group Membership
+## Step 2: Review Group Membership
 
 I checked security groups and confirmed which users were members of each group, noting any irregularities or unusual access.  
 
 ---
 
-## Step 3 – Document Access Review Process
+## Step 3: Document Access Review Process
 
 I recorded the steps followed during access reviews, including how users were added or removed, and how approvals were documented.  
 
 ---
 
-## Step 4 – Explain Compliance Impact
+## Step 4: Explain Compliance Impact
 
 I explained the compliance impact of reviewing user access and documenting group memberships. 
 Even though I couldn’t run a live access review due to my expired subscription, I documented the intended process.
