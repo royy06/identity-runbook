@@ -28,13 +28,6 @@ This repository contains all documentation, projects, and resources for identity
 - [Project 10 – End-to-End Ticket Handling Capstone](./Project%2010-%20End-to-End%20ticket%20handling%20capstone)
 ---
 
-## Screenshots
-
-All project images are in the Screenshots folder.  
-Use these images in the project runbooks as needed.
-
----
-
 ## Lessons Learned
 
 Project reflections and takeaways are in the 
