@@ -11,7 +11,7 @@ Demonstrate job readiness across identity, security, and compliance by resolving
 
 ---
 
-## Ticket 1 – Access Request
+## Ticket 1: Access Request
 
 I reviewed an access request and validated the user’s role. I assigned TestUser1 to the appropriate security group following least privilege access.
 
@@ -19,7 +19,7 @@ I reviewed an access request and validated the user’s role. I assigned TestUse
 
 ---
 
-## Ticket 2 – MFA Issue
+## Ticket 2: MFA Issue
 
 I reviewed the user’s authentication methods and confirmed MFA was configured correctly. I ensured the user had valid MFA methods registered.
 
@@ -27,7 +27,7 @@ I reviewed the user’s authentication methods and confirmed MFA was configured 
 
 ---
 
-## Ticket 3 – Security Escalation
+## Ticket 3: Security Escalation
 
 I reviewed sign-in logs for suspicious activity and followed escalation procedures based on observed sign-in behavior.
 
