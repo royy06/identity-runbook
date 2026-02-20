@@ -11,7 +11,7 @@ Map identity and access controls to Zero Trust principles to demonstrate how acc
 
 ---
 
-## Step 1 – Identify Zero Trust Principles
+## Step 1: Identify Zero Trust Principles
 
 I reviewed the core Zero Trust principles and focused on:
 - Verify explicitly
@@ -22,7 +22,7 @@ I used these principles as the baseline for mapping identity controls.
 
 ---
 
-## Step 2 – Map Identity Controls to Zero Trust
+## Step 2: Map Identity Controls to Zero Trust
 
 I mapped common identity controls in Entra ID to each Zero Trust principle:
 
@@ -43,7 +43,7 @@ I mapped common identity controls in Entra ID to each Zero Trust principle:
 
 ---
 
-## Step 3 – Conditional Access Mapping
+## Step 3: Conditional Access Mapping
 
 I documented how Conditional Access supports Zero Trust by:
 - Requiring MFA before access is granted
@@ -54,7 +54,7 @@ Even without active policies enabled, I demonstrated understanding of how Condit
 
 ---
 
-## Step 4 – Zero Trust Summary Table
+## Step 4: Zero Trust Summary Table
 
 | Zero Trust Principle | Identity Control Used        | Security Benefit                          |
 |---------------------|-----------------------------|-------------------------------------------|
