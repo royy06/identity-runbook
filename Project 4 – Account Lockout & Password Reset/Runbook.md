@@ -21,7 +21,7 @@ I went into the test user’s account and reset the password. I either auto-gene
 ---
 
 ## Step 4: Unlock Account
-If the account was blocked, I unlocked it so the user could sign in. I confirmed the sign-in status was active before moving on.
+Since the account was blocked, I unlocked it so the user could sign in. I confirmed the sign-in status was active before moving on.
 
 ---
 
