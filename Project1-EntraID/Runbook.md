@@ -12,7 +12,7 @@ Establish a secure identity foundation and demonstrate understanding of authenti
 
 ---
 
-## Step 1. Create Test Users
+## Step 1: Create Test Users
 
 I signed in to the Microsoft Entra Admin Center and created two test users. 
 The first user is testuser1@yourdomain.com with the display name Test User 1. 
@@ -22,7 +22,7 @@ Both accounts were successfully created and are ready for testing group membersh
 
 ---
 
-## Step 2. Create Security Groups
+## Step 2: Create Security Groups
 
 I created security groups called App-Access-Users and App-Access-Admins as the group type Security.
 I added both test users as members.
@@ -30,7 +30,7 @@ These groups will be used to manage permissions in the lab while enforcing the p
 
 ---
 
-## Step 3. Enable Security Defaults (MFA)
+## Step 3: Enable Security Defaults (MFA)
 
 I went to Entra ID → Properties → Manage Security Defaults and turned on Security Defaults..
 This enforces multi-factor authentication (MFA) for all users, including the test accounts. 
@@ -39,7 +39,7 @@ This ensures that even if someone knows the password, they cannot access the acc
 
 ---
 
-## Step 4. Test Sign-in as a Test User
+## Step 4: Test Sign-in as a Test User
 
 I opened a private/incognito browser and signed in as testuser1@yourdomain.com.
 After entering the email and password, I was prompted to register MFA.
@@ -48,7 +48,7 @@ I verified that I could successfully access the Microsoft 365 portal after compl
 
 ---
 
-## Step 5. Validate Identity Structure
+## Step 5: Validate Identity Structure
 
 I verified that both test users, testuser1@yourdomain.com and testuser2@yourdomain.com, exist in Entra ID under Active Users.
 I confirmed that the groups App-Access-Users and App-Access-Admins exist and that the correct members are in each group.
