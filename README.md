@@ -9,7 +9,6 @@ This repository contains all documentation, projects, and resources for identity
 - **EnvironmentSetup/** – Instructions and steps for preparing the lab environment.
 - **Runbook_Projects/** – Step-by-step guides for all 10 projects.
 - **SecurityControls/** – Documentation of security controls applied.
-- **TicketsWorked/** – Logs of tickets or exercises you completed.
 - **Screenshots/** – Images for all projects referenced in runbooks.
 - **Lessons_Learned/** – Reflections and takeaways from each project.
 
